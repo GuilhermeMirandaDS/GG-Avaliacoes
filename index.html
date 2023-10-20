@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>GG Avaliações</title>
+</head>
+<body>
+    <header>
+        <img class="logoicon" src="/elementos/logo.webp">
+        <h1 class="logo">GG Avaliações</h1>
+        <div id="menu-icon">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#title04">Destaques</a></li>
+                <li><a href="#title05">Recomendações</a></li>
+            </ul>
+            <div class="dropdown">
+                <button id="category-filter" onchange="applyFilters()"class="dropbtn">
+                    Categorias
+                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+                </button>
+                <div class="dropdown-content" id="category-filter" onchange="applyFilters()">
+                    <div class="filter-option" onclick="applyCategoryFilter('all')">Todas</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('acao')">Ação</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('aventura')">Aventura</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('comedia')">Comédia</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('drama')">Drama</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('romance')">Romance</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('fantasia')">Fantasia</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('suspense')">Suspense</div>
+                    <div class="filter-option" onclick="applyCategoryFilter('terror')">Terror</div>
+                </div>
+            </div>         
+            <div class="dropdown">
+                <button id="ano-filter" class="dropbtn" onchange="applyFilters()">
+                    Ano de Lançamento
+                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+                </button>
+                <div class="dropdown-content">
+                    <div class="filter-option" onclick="applyYearFilter('all')">Todos</div>
+                    <div class="filter-option" onclick="applyYearFilter('2010')">2010</div>
+                    <div class="filter-option" onclick="applyYearFilter('2011')">2011</div>
+                    <div class="filter-option" onclick="applyYearFilter('2012')">2012</div>
+                    <div class="filter-option" onclick="applyYearFilter('2013')">2013</div>
+                    <div class="filter-option" onclick="applyYearFilter('2014')">2014</div>
+                    <div class="filter-option" onclick="applyYearFilter('2015')">2015</div>
+                    <div class="filter-option" onclick="applyYearFilter('2016')">2016</div>
+                    <div class="filter-option" onclick="applyYearFilter('2017')">2017</div>
+                    <div class="filter-option" onclick="applyYearFilter('2018')">2018</div>
+                    <div class="filter-option" onclick="applyYearFilter('2019')">2019</div>
+                    <div class="filter-option" onclick="applyYearFilter('2020')">2020</div>
+                    <div class="filter-option" onclick="applyYearFilter('2021')">2021</div>
+                    <div class="filter-option" onclick="applyYearFilter('2022')">2022</div>
+                    <div class="filter-option" onclick="applyYearFilter('2023')">2023</div>
+
+                </div>
+            </div>    
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Avaliação
+                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+                </button>
+                <div class="dropdown-content">
+                    <div class="filter-option" onclick="applyHatingFilter('all')">Todos</div>
+                    <div class="filter-option" onclick="applyHatingFilter('0')">0 Estrelas</div>
+                    <div class="filter-option" onclick="applyHatingFilter('1')">1 Estrela</div>
+                    <div class="filter-option" onclick="applyHatingFilter('2')">2 Estrelas</div>
+                    <div class="filter-option" onclick="applyHatingFilter('3')">3 Estrelas</div>
+                    <div class="filter-option" onclick="applyHatingFilter('4')">4 Estrelas</div>
+                    <div class="filter-option" onclick="applyHatingFilter('5')">5 Estrelas</div>
+                </div>
+            </div> 
+        </nav>
+        <div class="searcharea">
+            <div class="searchbarwb">
+                <input id="searchbar" onkeyup="search_card()" name="searchbar" placeholder="Pesquisar">
+                <img class="searchicon" src="/elementos/search_FILL0_wght400_GRAD0_opsz24.svg" alt="Pesquisar">
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu">
+        <a href="index.html">Página Inicial</a>
+        <li><a href="#title04">Destaques</a></li>
+        <li><a href="#title05">Recomendações</a></li>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuIcon.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+    </script>
+<div class="card-horizontal">
+    <div class="card-content">
+        <div class="card-title">
+            <h1>Avalie agora! Kyoukai No Kanata!</h1>
+            <h6 class="data">22/04/2024</h6>
+            <p>Kyoukai no Kanata conta a história de um garoto chamado Akihito Kanbara, que na verdade é meio humano e meio “Youmu”, uma criatura que consegue se curar rapidamente de feridas e machucados. Em um novo ano letivo, Akihito conhece Mirai Kuriyama, uma garota que tenta se suicidar pulando do telhado do colégio.</p>
+            <a href="kyoukai.html" class="avaliacaokyoukai"> Avalie agora! ( 5⭐)</a>
+        </div>
+    </div>
+    <div class="card-image">
+        <img src="/elementos/kyoukai.png" alt="kyoukai">
+    </div>
+</div>
+    <h1 class="title-1 animes-title">Animes</h1>
+    <p class="animes-sub">Avalie os animes da atualidade e os clássicos!</p>
+    <div class="arrow-container">
+        <i class="fas fa-arrow-left arrow anime-prev-arrow" id="prev-arrow"></i> 
+        <i class="fas fa-arrow-right arrow anime-next-arrow" id="next-arrow"></i> 
+    </div>
+    <div class="card-container" id="card-container-animes">
+        <div id="spyxfamily" class="card" data-category="comedia" data-year="2022" data-hating="4">
+            <img src="elementos/spy.jpe">
+            <div class="card-title">Spy × Family</div>
+            <a href="spy.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+
+        </div>
+        <div id="attackontitan" class="card" data-category="acao" data-category="fantasia" data-year="2013" data-hating="5">
+            <img src="elementos/attack.jpe">
+            <div class="card-title">Attack on Titan</div>
+            <a href="attack.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div id="rezero" class="card" data-category="acao" data-year="2016" data-hating="4">
+            <img src="elementos/re.jpe">
+            <div class="card-title">RE:ZERO</div>
+            <a href="rezero.html" class="avaliacao"> Avaliações (4.7⭐)</a>
+        </div>
+        <div id="mahoutsukai" class="card" data-category="fantasia" data-year="2017" data-hating="4">
+            <img src="elementos/mahou.jpe">
+            <div class="card-title">Mahou Tsukai No Yome</div>
+            <a href="mahou.html" class="avaliacao"> Avaliações (4.4⭐)</a>
+        </div>
+        <div id="bleach" class="card" data-category="acao" data-year="2004" data-hating="3">
+            <img src="elementos/bleach.jpe">
+            <div class="card-title">Bleach</div>
+            <a href="bleach.html" class="avaliacao"> Avaliações (3.9⭐)</a>
+        </div>
+        <div id="fairytail" class="card" data-category="acao" data-year="2002" data-hating="4">
+            <img src="elementos/fairy.jpe">
+            <div class="card-title">Fairy Tail</div>
+            <a href="fairytail.html" class="avaliacao"> Avaliações (4.8⭐)</a>
+        </div>
+        <div id="toradora" class="card" data-category="romance" data-year="2008" data-hating="4">
+            <img src="elementos/toradora.jpe">
+            <div class="card-title">Toradora</div>
+            <a href="toradora.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div id="misskobayashi" class="card" data-category="comedia" data-year="2017" data-hating="4">
+            <img src="elementos/miss.jpe">
+            <div class="card-title">Miss Kobayashi</div>
+            <a href="miss.html" class="avaliacao"> Avaliações (4.5⭐)</a>
+        </div>
+    </div>
+    <h1 class="title-1 series-title">Séries</h1>
+    <p class="series-sub">Avalie as séries da atualidade e as clássicas!</p>
+    <div class="arrow-container">
+        <i class="fas fa-arrow-left arrow series-prev-arrow" id="prev-arrow-series"></i>
+        <i class="fas fa-arrow-right arrow series-next-arrow" id="next-arrow-series"></i>
+    </div>
+
+    <div class="card-container" id="card-container-series">
+        <div class="card" data-category="suspense" data-year="2014" data-hating="4">
+            <img src="elementos/you.jpg">
+            <div class="card-title">You</div>
+            <a href="you.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="drama" data-year="2019" data-hating="5">
+            <img src="elementos/boys.jpeg">
+            <div class="card-title">The Boys</div>
+            <a href="theboys.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="terror" data-year="2010" data-hating="5">
+            <img src="elementos/walking.jpg">
+            <div class="card-title">The Walking Dead</div>
+            <a href="Thewlaking.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="terror" data-year="2018" data-hating="4">
+            <img src="elementos/sabrina.jpg">
+            <div class="card-title">O Mundo Sombrio de Sabrina</div>
+            <a href="sabrina.html" class="avaliacao"> Avaliações (4.7⭐)</a>
+        </div>
+        <div class="card" data-category="aventura 2016" data-year="2016" data-hating="4">
+            <img src="elementos/things.jpg">
+            <div class="card-title">Stranger Things</div>
+            <a href="strenger.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="aventura 2017" data-year="2017" data-hating="4">
+            <img src="elementos/anne.jpg">
+            <div class="card-title">Anne with an E</div>
+            <a href="anne.html" class="avaliacao"> Avaliações (4.5⭐)</a>
+        </div>
+        <div class="card" data-category="drama 2008" data-year="2008" data-hating="5">
+            <img src="elementos/break.jpg">
+            <div class="card-title">Breaking Bad</div>
+            <a href="breaking.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="drama 2020" data-year="2020" data-hating="4">
+            <img src="elementos/gambito.webp">
+            <div class="card-title">O Gambito da Rainha (The Queen's Gambit)</div>
+            <a href="queen.html" class="avaliacao"> Avaliações (4.4⭐)</a>
+        </div>
+    </div>
+    <h1 id="title03 " class="title-1 title-populares" >Populares</h1>
+    <p class="populares-sub">Explore o que está em alta</p>
+    <div class="arrow-container">
+        <i class="fas fa-arrow-left arrow populares-prev-arrow" id="prev-arrow-populares"></i>
+        <i class="fas fa-arrow-right arrow populares-next-arrow" id="next-arrow-populares"></i>
+    </div>
+
+    <div class="card-container" id="card-container-populares">
+        <div class="card" data-category="romance" data-year="2015" data-hating="4">
+            <img src="elementos/kyoukai.jpg">
+            <div class="card-title">Kyoukai No Kanata</div>
+            <a href="kyoukai.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="drama" data-year="2023" data-hating="4">
+            <img src="populares/delete.jpg">
+            <div class="card-title">Delete</div>
+            <a href="delete.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2023" data-hating="4">
+            <img src="populares/Invasão.jpg">
+            <div class="card-title">Invasão Secreta</div>
+            <a href="invasão.html" class="avaliacao"> Avaliações (4.8⭐)</a>
+        </div>
+        <div class="card" data-category="aventura acao" data-year="2021" data-hating="4">
+            <img src="populares/loki.jpg">
+            <div class="card-title">Loki</div>
+            <a href="loki.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2022" data-hating="4">
+            <img src="populares/obi-wan.jpg">
+            <div class="card-title">Obi-Wan Kenobi</div>
+            <a href="obi.html" class="avaliacao"> Avaliações (4.5⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2022" data-hating="4">
+            <img src="populares/bleach.jpg">
+            <div class="card-title">bleach: thousand-year blood war</div>
+            <a href="bleach blood war.html" class="avaliacao" class="avaliacao"> Avaliações (4.6⭐)</a>
+        </div>
+        <div class="card" data-category="aventura acao" data-year="2023" data-hating="4">
+            <img src="populares/Tengoku_Daimakyou.jpg">
+            <div class="card-title">Tengoku Daimakyou</div>
+            <a href="tengou.html" class="avaliacao" class="avaliacao"> Avaliações (4.3⭐)</a>
+        </div>
+        <div class="card" data-category="aventura acao comedia" data-year="2023" data-hating="5">
+            <img src="populares/onepiece_serie.jpg">
+            <div class="card-title">One piece A Serie</div>
+            <a href="onepieceserie.html" class="avaliacao" > Avaliações (5⭐)</a>
+        </div> 
+        <div class="card" data-category="aventura acao comedia" data-year="1999" data-hating="5">
+            <img src="populares/onepiece.jpg">
+            <div class="card-title">One Piece</div>
+            <a href="onepiece.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+    </div>
+
+    <h1 id="title04" class="title-1 title-destaques">Destaques da Semana</h1>
+    <p class="sub"></p>
+    <div class="arrow-container">
+        <i class="fas fa-arrow-left arrow destaques-prev-arrow" id="prev-arrow-destaques"></i>
+        <i class="fas fa-arrow-right arrow destaques-next-arrow" id="next-arrow-destaques"></i>
+    </div>
+    
+    <div class="card-container" id="card-container-destaques">
+        <div class="card" data-category="suspense" data-year="2005" data-hating="4">
+            <img src="populares/criminal_minds.jpg">
+            <div class="card-title">Criminal Minds</div>
+            <a href="criminal.html" class="avaliacao"> Avaliações (4.6⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2020" data-hating="5">
+            <img src="populares/Demon slayer.jpg">
+            <div class="card-title">Demon Slayer</div>
+            <a href="demonslayer.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="drama" data-year="2005" data-hating="4" >
+            <img src="populares/grey's Anatomy.jpg">
+            <div class="card-title">Grey's Anatomy</div>
+            <a href="Anatomy.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="suspense terror aventura" data-year="2016" data-hating="4">
+            <img src="elementos/things.jpg">
+            <div class="card-title">Stranger Things</div>
+            <a href="strenger.html " class="avaliacao"> Avaliações (4.8⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/anne.jpg" data-hating="4">
+            <div class="card-title">Anne with an E </div>
+            <a href="anne.html" class="avaliacao"> Avaliações (4.9⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2018" data-hating="5">
+            <img src="populares/Scissor-Seven.jpg">
+            <div class="card-title">Scissor-Seven</div>
+            <a href="scissor.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/gambito.webp" data-hating="4">
+            <div class="card-title">The Queen's Gambit</div>
+            <a href="queen.html" class="avaliacao"> Avaliações (4.6⭐)</a>
+        </div>
+    </div>
+    <h1 id="title05 " class="title-1 title-recomendacoes">Recomendações</h1>
+    <p class="sub"></p>
+    <div class="arrow-container">
+        <i class="fas fa-arrow-left arrow recomendacoes-prev-arrow" id="prev-arrow-recomendacoes"></i>
+        <i class="fas fa-arrow-right arrow recomendacoes-next-arrow" id="next-arrow-recomendacoes"></i>
+    </div>
+    <div class="card-container" id="card-container-recomendacoes">
+        <div class="card">
+            <img src="elementos/boys.jpeg">
+            <div class="card-title">The Boys</div>
+            <a href="theboys.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura" data-year="2021" data-hating="4">
+            <img src="populares/jujutso kaisen.png">
+            <div class="card-title">Jujutso Kaisen</div>
+            <a href="Jujutso.html" class="avaliacao"> Avaliações (4.4⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/sabrina.jpg" data-hating="4">
+            <div class="card-title">O Mundo Sombrio de Sabrina</div>
+            <a href="sabrina.html" class="avaliacao"> Avaliações (4.2⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/anne.jpg">
+            <div class="card-title">Anne with an E</div>
+            <a href="anne.html" class="avaliacao"> Avaliações (4.8⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/break.jpg">
+            <div class="card-title">Breaking bad</div>
+            <a href="breaking.html" class="avaliacao"> Avaliações (5⭐)</a>
+        </div>
+        <div class="card">
+            <img src="elementos/gambito.webp">
+            <div class="card-title">The Queen's Gambit</div>
+            <a href="queen.html" class="avaliacao"> Avaliações (4.6⭐)</a>
+        </div>
+        <div class="card" data-category="acao aventura 2022" data-year="2022" data-hating="5">
+            <img src="populares/chainsaw.webp">
+            <div class="card-title">Chainsaw Man</div>
+            <a href="chainsaw.html" class="avaliacao"> Avaliações (5.0⭐)</a>
+        </div>
+        <div class="card" data-category="drama suspense 2013" data-year="2013" data-hating="4">
+            <img src="populares/peaky.jpg">
+            <div class="card-title">Peaky Blinders</div>
+            <a href="peaky.html" class="avaliacao"> Avaliações (4.6⭐)</a>
+        </div>
+    </div>
+    <script>
+      const cardContainer = document.querySelector(".card-container");
+        const prevArrow = document.getElementById("prev-arrow");
+        const nextArrow = document.getElementById("next-arrow");
+
+        let scrollPosition = 0;
+        const cardWidth = 320; 
+        const cardsPerPage = 3; 
+
+        prevArrow.addEventListener("click", () => {
+            scrollPosition -= cardWidth * cardsPerPage;
+            if (scrollPosition < 0) {
+                scrollPosition = 0;
+            }
+            cardContainer.scrollTo({
+                left: scrollPosition,
+                behavior: "smooth"
+            });
+        });
+
+        nextArrow.addEventListener("click", () => {
+            scrollPosition += cardWidth * cardsPerPage;
+            const maxScrollPosition = cardWidth * (cardContainer.children.length - cardsPerPage);
+            if (scrollPosition > maxScrollPosition) {
+                scrollPosition = maxScrollPosition;
+            }
+            cardContainer.scrollTo({
+                left: scrollPosition,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <script>
+        const cardContainerPopulares = document.getElementById("card-container-populares");
+        const prevArrowPopulares = document.getElementById("prev-arrow-populares");
+        const nextArrowPopulares = document.getElementById("next-arrow-populares");
+
+        let scrollPositionPopulares = 0;
+        const cardWidthPopulares = 320; 
+        const cardsPerPagePopulares = 3;
+
+        prevArrowPopulares.addEventListener("click", () => {
+        scrollPositionPopulares -= cardWidthSeries * cardsPerPageSeries;
+            if (scrollPositionPopulares < 0) {
+            scrollPositionPopulares = 0;
+        }
+        cardContainerPopulares.scrollTo({
+            left: scrollPositionPopulares,
+            behavior: "smooth"
+    });
+});
+
+    nextArrowPopulares.addEventListener("click", () => {
+        scrollPositionPopulares += cardWidthPopulares * cardsPerPagePopulares;
+    const maxScrollPositionPopulares = cardWidthPopulares * (cardContainerPopulares.children.length - cardsPerPagePopulares);
+        if (scrollPositionPopulares > maxScrollPositionPopulares) {
+        scrollPositionPopulares = maxScrollPositionPopulares;
+    }
+    cardContainerPopulares.scrollTo({
+    left: scrollPositionPopulares,
+    behavior: "smooth"
+    });
+});
+    </script>
+    <script>
+        const cardContainerSeries = document.getElementById("card-container-series");
+        const prevArrowSeries = document.getElementById("prev-arrow-series");
+        const nextArrowSeries = document.getElementById("next-arrow-series");
+
+        let scrollPositionSeries = 0;
+        const cardWidthSeries = 320; 
+        const cardsPerPageSeries = 3;
+
+        prevArrowSeries.addEventListener("click", () => {
+        scrollPositionSeries -= cardWidthSeries * cardsPerPageSeries;
+            if (scrollPositionSeries < 0) {
+            scrollPositionSeries = 0;
+        }
+        cardContainerSeries.scrollTo({
+            left: scrollPositionSeries,
+            behavior: "smooth"
+    });
+});
+
+    nextArrowSeries.addEventListener("click", () => {
+        scrollPositionSeries += cardWidthSeries * cardsPerPageSeries;
+    const maxScrollPositionSeries = cardWidthSeries * (cardContainerSeries.children.length - cardsPerPageSeries);
+        if (scrollPositionSeries > maxScrollPositionSeries) {
+        scrollPositionSeries = maxScrollPositionSeries;
+    }
+    cardContainerSeries.scrollTo({
+    left: scrollPositionSeries,
+    behavior: "smooth"
+    });
+});
+    </script>
+    <script>
+        const cardContainerDestaques = document.getElementById("card-container-destaques");
+        const prevArrowDestaques = document.getElementById("prev-arrow-destaques");
+        const nextArrowDestaques = document.getElementById("next-arrow-destaques");
+
+        let scrollPositionDestaques = 0;
+        const cardWidthDestaques = 320; 
+        const cardsPerPageDestaques = 3;
+
+        prevArrowDestaques.addEventListener("click", () => {
+        scrollPositionDestaques -= cardWidthDestaques * cardsPerPageDestaques;
+            if (scrollPositionDestaques < 0) {
+            scrollPositionDestaques = 0;
+        }
+        cardContainerDestaques.scrollTo({
+            left: scrollPositionDestaques,
+            behavior: "smooth"
+    });
+});
+
+    nextArrowDestaques.addEventListener("click", () => {
+        scrollPositionDestaques += cardWidthDestaques * cardsPerPageDestaques;
+    const maxScrollPositionDestaques = cardWidthDestaques * (cardContainerDestaques.children.length - cardsPerPageDestaques);
+        if (scrollPositionDestaques > maxScrollPositionDestaques) {
+        scrollPositionDestaques = maxScrollPositionDestaques;
+    }
+    cardContainerDestaques.scrollTo({
+    left: scrollPositionDestaques,
+    behavior: "smooth"
+    });
+});
+    </script>
+<script>
+    const cardContainerRecomendacoes = document.getElementById("card-container-recomendacoes");
+    const prevArrowRecomendacoes = document.getElementById("prev-arrow-recomendacoes");
+    const nextArrowRecomendacoes = document.getElementById("next-arrow-recomendacoes");
+
+    let scrollPositionRecomendacoes = 0;
+    const cardWidthRecomendacoes = 320; 
+    const cardsPerPageRecomendacoes = 3;
+
+    prevArrowRecomendacoes.addEventListener("click", () => {
+    scrollPositionRecomendacoes -= cardWidthRecomendacoes * cardsPerPageRecomendacoes;
+        if (scrollPositionRecomendacoes < 0) {
+        scrollPositionRecomendacoes = 0;
+    }
+    cardContainerRecomendacoes.scrollTo({
+        left: scrollPositionRecomendacoes,
+        behavior: "smooth"
+});
+});
+
+nextArrowRecomendacoes.addEventListener("click", () => {
+    scrollPositionRecomendacoes += cardWidthRecomendacoes * cardsPerPageRecomendacoes;
+const maxScrollPositionRecomendacoes = cardWidthRecomendacoes * (cardContainerRecomendacoes.children.length - cardsPerPageRecomendacoes);
+    if (scrollPositionRecomendacoes > maxScrollPositionRecomendacoes) {
+    scrollPositionRecomendacoes = maxScrollPositionRecomendacoes;
+}
+cardContainerRecomendacoes.scrollTo({
+left: scrollPositionRecomendacoes,
+behavior: "smooth"
+});
+});
+</script>
+
+
+    <script src="./search.js"></script>
+    <p id="not-found-message" style="display: none;">Desculpe, infelizmente não encontramos esta obra em nosso site :(</p>
+</body>
+</html>

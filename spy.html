@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="avaliacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <title>GG Avaliações</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">GG Avaliações</h1>
+        <div id="menu-icon">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+    <div id="mobile-menu">
+        <a href="index.html">Página Inicial</a>
+
+    </div>
+
+    <h1 class="title-1">Anime</h1>
+    <p class="sub">Avalie os animes da atualidade e os clássicos!</p>
+    <div class="card-container" id="card-container-animes">
+        <div class="card">
+            <img src="elementos/spy.jpe" alt="Imagem do Card">
+            <div class="card-title">Spy × Family</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="star-widget">
+            <input type="radio" name="rate" id="rate-5">
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4">
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3">
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2">
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1">
+            <label for="rate-1" class="fas fa-star"></label>
+            <form id="comment-form">
+                <header></header>
+                <div class="textarea">
+                    <textarea id="comment-text" cols="30" placeholder="Descreva sua experiência.."></textarea>
+                </div>
+                <div class="btn">
+                    <button type="button" id="post-comment">POSTAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="coment" id="comentarios-container">
+
+        </div>
+    </div>
+    <script>
+
+      function adicionarComentario(comentario) {
+          const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+          comentarios.push(comentario);
+          localStorage.setItem("comentarios", JSON.stringify(comentarios));
+      }
+
+
+      function carregarComentarios() {
+          const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+          const comentariosContainer = document.getElementById("comentarios-container");
+
+          comentariosContainer.innerHTML = "";
+
+          comentarios.forEach((comentario, index) => {
+              const novoComentario = document.createElement("div");
+              novoComentario.classList.add("comentario");
+              novoComentario.textContent = `Comentário ${index + 1}: ${comentario}`;
+              comentariosContainer.appendChild(novoComentario);
+          });
+      }
+
+      const postCommentButton = document.getElementById("post-comment");
+      const commentText = document.getElementById("comment-text");
+
+      postCommentButton.addEventListener("click", function () {
+          const comentario = commentText.value.trim();
+
+          if (comentario) {
+              adicionarComentario(comentario);
+              carregarComentarios();
+              commentText.value = "";
+          }
+      });
+
+
+      carregarComentarios();
+
+  </script>
+</body>
+</html>
