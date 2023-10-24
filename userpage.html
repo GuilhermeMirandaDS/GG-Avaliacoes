@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Página do Usuário</title>
+</head>
+<body>
+  <header>
+    <img class="logoicon" src="/elementos/logo.webp">
+    <h1 class="logo">GG Avaliações</h1>
+    <div id="menu-icon">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#title04">Destaques</a></li>
+        <li><a href="#title05">Recomendações</a></li>
+      </ul>
+      <div class="dropdown">
+        <button id="category-filter" onchange="applyFilters()" class="dropbtn">
+          Categorias
+          <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+        </button>
+        <div class="dropdown-content" id="category-filter" onchange="applyFilters()">
+          <div class="filter-option" onclick="applyCategoryFilter('all')">Todas</div>
+          <div class="filter-option" onclick="applyCategoryFilter('acao')">Ação</div>
+          <div class="filter-option" onclick="applyCategoryFilter('aventura')">Aventura</div>
+          <div class="filter-option" onclick="applyCategoryFilter('comedia')">Comédia</div>
+          <div class="filter-option" onclick="applyCategoryFilter('drama')">Drama</div>
+          <div class="filter-option" onclick="applyCategoryFilter('romance')">Romance</div>
+          <div class="filter-option" onclick="applyCategoryFilter('fantasia')">Fantasia</div>
+          <div class="filter-option" onclick="applyCategoryFilter('suspense')">Suspense</div>
+          <div class="filter-option" onclick="applyCategoryFilter('terror')">Terror</div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button id="ano-filter" class="dropbtn" onchange="applyFilters()">
+          Ano de Lançamento
+          <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+        </button>
+        <div class="dropdown-content">
+          <div class="filter-option" onclick="applyYearFilter('all')">Todos</div>
+          <div class="filter-option" onclick="applyYearFilter('2010')">2010</div>
+          <div class="filter-option" onclick="applyYearFilter('2011')">2011</div>
+          <div class="filter-option" onclick="applyYearFilter('2012')">2012</div>
+          <div class="filter-option" onclick="applyYearFilter('2013')">2013</div>
+          <div class="filter-option" onclick="applyYearFilter('2014')">2014</div>
+          <div class="filter-option" onclick="applyYearFilter('2015')">2015</div>
+          <div class="filter-option" onclick="applyYearFilter('2016')">2016</div>
+          <div class="filter-option" onclick="applyYearFilter('2017')">2017</div>
+          <div class="filter-option" onclick="applyYearFilter('2018')">2018</div>
+          <div class="filter-option" onclick="applyYearFilter('2019')">2019</div>
+          <div class="filter-option" onclick="applyYearFilter('2020')">2020</div>
+          <div class="filter-option" onclick="applyYearFilter('2021')">2021</div>
+          <div class="filter-option" onclick="applyYearFilter('2022')">2022</div>
+          <div class="filter-option" onclick="applyYearFilter('2023')">2023</div>
+  
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Avaliação
+          <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
+        </button>
+        <div class="dropdown-content">
+          <div class="filter-option" onclick="applyHatingFilter('all')">Todos</div>
+          <div class="filter-option" onclick="applyHatingFilter('0')">0 Estrelas</div>
+          <div class="filter-option" onclick="applyHatingFilter('1')">1 Estrela</div>
+          <div class="filter-option" onclick="applyHatingFilter('2')">2 Estrelas</div>
+          <div class="filter-option" onclick="applyHatingFilter('3')">3 Estrelas</div>
+          <div class="filter-option" onclick="applyHatingFilter('4')">4 Estrelas</div>
+          <div class="filter-option" onclick="applyHatingFilter('5')">5 Estrelas</div>
+        </div>
+      </div>
+    </nav>
+    <div class="searcharea">
+      <div class="searchbarwb">
+        <input id="searchbar" onkeyup="search_card()" name="searchbar" placeholder="Pesquisar">
+        <img class="searchicon" src="/elementos/search_FILL0_wght400_GRAD0_opsz24.svg" alt="Pesquisar">
+      </div>
+    </div>
+  </header>
+  <div class="corpo">
+    <div class="avaliacao-user">
+      <div class="obra-info">
+        <img src="/elementos/anne.jpg">
+        <h2>Anne with an E</h2>
+        <h3>Drama</h3>
+        <h3>⭐</h3>
+      </div>
+      <div class="ava"><h2>avaliação do usuário...</h2></div>
+    </div>
+    <div class="card-user">
+      <div class="card-info">
+        <div class="user-info">
+          <h1>Nome do Usuário</h1>
+          <div class="total-av">
+            <img src="/elementos/star-user.svg">
+            <h2>Avaliações: 465</h2>
+          </div>
+          <div class="local">
+            <img src="/elementos/distance.svg">
+            <h2>Marília</h2>
+            <h2>-</h2>
+            <h2>SP</h2>
+          </div>
+        </div>
+        <img id="pfp" src="/elementos/pfp.png">
+      </div>
+      <div class="bio">
+        <h2>Bio...</h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
