@@ -6,6 +6,8 @@ body {
     padding: 0;
     background-color: #292b2e;
     margin-top: 15vh;
+    display: flex;
+    justify-content: end;
 }
 .avaliacao {
     background-color: rgb(219, 52, 75);
@@ -330,4 +332,128 @@ nav a {
     font-size: 30px;
     display: flex;
     justify-content: center;
+}
+
+.card-user{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(38, 38, 38, 1);
+    width: 448px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding-top: 12px;
+    padding-bottom:12px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.user-info{
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    line-height: 2px;
+
+}
+
+.card-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1{
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+h2{
+    color: #B5B5B5;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#pfp{
+    width: 166px;
+    height: 166px;
+    border-radius: 88px;
+}
+
+.total-av, .local{
+    display: flex;
+    align-items: center;
+}
+
+.corpo{
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
+
+}
+
+.bio{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 479px;
+    width: 424px;
+    border-radius: 5px;
+}
+
+.bio h2{
+    padding-left: 12px;
+}
+
+.avaliacao-user{
+    display: flex;
+    width: 773px;
+    height: 482px;
+    padding: 12px;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: rgba(80, 80, 80, 1);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.avaliacao-user img{
+    width: 193px;
+}
+
+.ava{
+    background-color: rgba(48, 48, 48, 1);
+    height: 100%;
+    width: 100%;
+}
+.ava h2{
+    padding-left:12px;
+    font-family: Inter, sans-serif;
+    color: #B5B5B5;
+}
+
+.obra-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Inter, sans-serif;
+    color: #b6b6b6;
+}
+
+.obra-info h2{
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+}
+h3 {
+    font-style:normal;
+    font-size: 16px;
 }
