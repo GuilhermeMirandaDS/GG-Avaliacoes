@@ -5,23 +5,23 @@
 body{
     padding: 0px;
     margin: 0px;
-    background-image: url(/elementos/fundo.jpeg) ;
+    background-image: url(/elementos/fundo.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 .nometab{
     font-family: 'Bebas Neue', sans-serif;
-
     text-align: center;
     margin: -8px;
 }
 .cadastrar{
     font-family: 'Bebas Neue', sans-serif;
     font-size: 24px;
-    width: 100%;
+    width: 40%;
     border: 4px;
     color: white;
     background-color: rgb(219, 52, 75);
@@ -29,11 +29,16 @@ body{
     border-radius: 500px;
     margin: 24px;
     box-shadow: 2px 2px 0px rgb(133, 28, 42);
+    transition: 250ms;
 }
-.cadastrar:active{
-    box-shadow: none;
-    
+.cadastrar:hover{
+    cursor: pointer;
+    transition: 250ms;
+    filter: brightness(80%);
+    width: 100%;
 }
+
+
 .logo{
     width: 100px;
     border-radius: 88px;
@@ -45,12 +50,11 @@ body{
     align-items: center;
 }
 .cad{
-    
     justify-content:center ;
     background-color: #0b0b0ba2;
     width: 300px;
     height: 500px;
-    margin: 48px;
+    margin: 164px;
     padding: 24px;
     border-radius:6px ;
     color: white;
@@ -65,12 +69,26 @@ body{
     font-size: 12px;
 }
 .cad input{
+    color: rgb(255, 255, 255);
+    width: 260px;
     margin: 12px;
     background: none;
     border: none;
     box-shadow: 0px 1px rgb(255, 255, 255);
 }
 
+.cad input:focus{
+    line-height: 1.5;
+    transition: 500ms;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.icon img{
+    filter: invert(100%);
+}
 .cad input:focus{
     border: none;
     outline: 0;
