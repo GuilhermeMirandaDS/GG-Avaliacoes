@@ -7,6 +7,7 @@ body {
     background-color: #292b2e;
     margin-top: 15vh;
     display: flex;
+    flex-direction: column;
     justify-content: end;
 }
 .avaliacao {
@@ -89,13 +90,64 @@ body {
 header {
     background-color: #0d0f11;
     color: #fff;
-    padding: 10px 0;
+    padding: 12px;
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     z-index: 2;
+}
+.pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 62%;
+}
+#nome-pesquisa{
+    outline: none;
+    border: none;
+    border-radius: 26px;
+    width: 280px;
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight:400;
+    margin-left: 10px;
+}
+#nome-pesquisa::placeholder{
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+}
+#pesquisar-btn{
+    border: none;
+    border-radius: 88px;
+    padding: 12px;
+    margin-left: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight:400;
+}
+.pesquisa h2{
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    margin-right: 12px;
+}
+.filtro{
+    margin: 12px;
+    background: none;
+    filter: invert(100%);
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+.option{
+    background-color: #292b2e;
+    color: white;
 }
 header h1 {
     font-family: 'Roboto Slab', serif;
@@ -183,8 +235,9 @@ header h1 {
 }
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
 }
 nav ul {
     list-style: none;

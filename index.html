@@ -10,78 +10,46 @@
 </head>
 <body>
     <header>
-        <img class="logoicon" src="/elementos/logo.webp">
-        <h1 class="logo">GG Avaliações</h1>
-        <div id="menu-icon">&#9776;</div>
         <nav>
+            <img class="logoicon" src="/elementos/logo.webp">
+            <h1 class="logo">GG Avaliações</h1>
+            <div id="menu-icon">&#9776;</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#title04">Destaques</a></li>
                 <li><a href="#title05">Recomendações</a></li>
             </ul>
-            <div class="dropdown">
-                <button id="category-filter" onchange="applyFilters()"class="dropbtn">
-                    Categorias
-                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
-                </button>
-                <div class="dropdown-content" id="category-filter" onchange="applyFilters()">
-                    <div class="filter-option" onclick="applyCategoryFilter('all')">Todas</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('acao')">Ação</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('aventura')">Aventura</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('comedia')">Comédia</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('drama')">Drama</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('romance')">Romance</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('fantasia')">Fantasia</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('suspense')">Suspense</div>
-                    <div class="filter-option" onclick="applyCategoryFilter('terror')">Terror</div>
-                </div>
-            </div>         
-            <div class="dropdown">
-                <button id="ano-filter" class="dropbtn" onchange="applyFilters()">
-                    Ano de Lançamento
-                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
-                </button>
-                <div class="dropdown-content">
-                    <div class="filter-option" onclick="applyYearFilter('all')">Todos</div>
-                    <div class="filter-option" onclick="applyYearFilter('2010')">2010</div>
-                    <div class="filter-option" onclick="applyYearFilter('2011')">2011</div>
-                    <div class="filter-option" onclick="applyYearFilter('2012')">2012</div>
-                    <div class="filter-option" onclick="applyYearFilter('2013')">2013</div>
-                    <div class="filter-option" onclick="applyYearFilter('2014')">2014</div>
-                    <div class="filter-option" onclick="applyYearFilter('2015')">2015</div>
-                    <div class="filter-option" onclick="applyYearFilter('2016')">2016</div>
-                    <div class="filter-option" onclick="applyYearFilter('2017')">2017</div>
-                    <div class="filter-option" onclick="applyYearFilter('2018')">2018</div>
-                    <div class="filter-option" onclick="applyYearFilter('2019')">2019</div>
-                    <div class="filter-option" onclick="applyYearFilter('2020')">2020</div>
-                    <div class="filter-option" onclick="applyYearFilter('2021')">2021</div>
-                    <div class="filter-option" onclick="applyYearFilter('2022')">2022</div>
-                    <div class="filter-option" onclick="applyYearFilter('2023')">2023</div>
-
-                </div>
-            </div>    
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Avaliação
-                    <img class="seta" src="/elementos/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.svg">
-                </button>
-                <div class="dropdown-content">
-                    <div class="filter-option" onclick="applyHatingFilter('all')">Todos</div>
-                    <div class="filter-option" onclick="applyHatingFilter('0')">0 Estrelas</div>
-                    <div class="filter-option" onclick="applyHatingFilter('1')">1 Estrela</div>
-                    <div class="filter-option" onclick="applyHatingFilter('2')">2 Estrelas</div>
-                    <div class="filter-option" onclick="applyHatingFilter('3')">3 Estrelas</div>
-                    <div class="filter-option" onclick="applyHatingFilter('4')">4 Estrelas</div>
-                    <div class="filter-option" onclick="applyHatingFilter('5')">5 Estrelas</div>
-                </div>
-            </div> 
         </nav>
-        <div class="searcharea">
-            <div class="searchbarwb">
-                <input id="searchbar" onkeyup="search_card()" name="searchbar" placeholder="Pesquisar">
-                <img class="searchicon" src="/elementos/search_FILL0_wght400_GRAD0_opsz24.svg" alt="Pesquisar">
-            </div>
-        </div>
+            <form class="pesquisa" method="post" action="pesquisa-resultado.php">
+                <h2>Filtros:</h2>
+                <select class="filtro">
+                    <option disabled selected>Categoria</option>
+                    <option class="option">Todas</option>
+                    <option class="option">Ação</option>
+                    <option class="option">Aventura</option>
+                    <option class="option">Comédia</option>
+                    <option class="option">Drama</option>
+                    <option class="option">Romance</option>
+                    <option class="option">Fantasia</option>
+                    <option class="option">Suspense</option>
+                    <option class="option">Terror</option>
+                </select>
+                <select class="filtro">
+                    <option disabled selected>Ano</option>
+                </select>
+                <select class="filtro" >
+                    <option disabled selected>Avaliação</option>
+                    <option class="option">Todas</option>
+                    <option class="option">1</option>
+                    <option class="option">2</option>
+                    <option class="option">3</option>
+                    <option class="option">4</option>
+                    <option class="option">5</option>
+                </select>
+                <input type="text" id="nome-pesquisa" placeholder="Digite o nome" >
+                <a href="pesquisa-resultado.php"><input type="button" id="pesquisar-btn" value="Pesquisar"></a>
+            </form>
+
     </header>
     <div id="mobile-menu">
         <a href="index.html">Página Inicial</a>
