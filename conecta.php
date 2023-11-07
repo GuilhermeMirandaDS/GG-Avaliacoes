@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";
+    $servername = "localhost:3308";
     $database = "gg-avaliacoes";
     $username = "root";
     $password = "";
