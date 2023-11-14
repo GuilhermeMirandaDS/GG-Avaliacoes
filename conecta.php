@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost:3308";
-    $database = "gg-avaliacoes";
+    $database = "ggcerto";
     $username = "root";
     $password = "";
 

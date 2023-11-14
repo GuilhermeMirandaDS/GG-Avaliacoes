@@ -51,46 +51,81 @@
       <a href="pesquisa-resultado.php"><input type="button" id="pesquisar-btn" value="Pesquisar"></a>
     </form>
   <?php
-  require("conecta.php");
+    require("conecta.php");
 
-  $nome = $_POST['nome'];
-  $categoria = $_POST['categoria'];
-  $ano = $_POST['ano'];
-  $avaliacao = $_POST['avaliacao'];
+    $categoria_obra = $_POST['categoria_obra'];
+    $ano_obra = $_POST['ano_obra'];
+    $avaliacao_obra = $_POST['avaliacao_obra'];
+    $nome_obra = $_POST['nome_obra'];
 
-  $sql = "SELECT * FROM obras WHERE 1=1";
+    $dados_select = mysqli_query($conn, "SELECT  ");
 
-  if (!empty($nome)) {
-    $sql .= " AND Nome LIKE '%$nome%'";
-  }
 
-  if (!empty($categoria)) {
-    $sql .= " AND ID_CATEGORIA = '$categoria'";
-  }
 
-  if (!empty($ano)) {
-    $sql .= " AND Lancamento = '$ano'";
-  }
 
-  if (!empty($avaliacao) && $avaliacao !== 'Todas') {
-    $sql .= " AND ID_AVALIACAO = '$avaliacao'";
-  }
 
-  $result = $conn->query($sql);
 
-  if ($result->num_rows > 0) {
-    echo "<h2>Resultados da Pesquisa:</h2>";
-    while ($row = $result->fetch_assoc()) {
-      echo "Nome: " . $row["Nome"] . "<br>";
-      echo "Categoria: " . $row["ID_CATEGORIA"] . "<br>";
-      echo "Ano: " . $row["Lancamento"] . "<br>";
-      echo "Avaliação: " . $row["ID_AVALIACAO"] . "<br>";
-    }
-  } else {
-    echo "Nenhum resultado encontrado.";
-  }
 
-  $conn->close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // $nome = $_POST['nome'];
+    // $categoria = $_POST['categoria'];
+    // $ano = $_POST['ano'];
+    // $avaliacao = $_POST['avaliacao'];
+
+    // $sql = "SELECT * FROM obras WHERE 1=1";
+
+    // if (!empty($nome)) {
+    //   $sql .= " AND Nome LIKE '%$nome%'";
+    // }
+
+    // if (!empty($categoria)) {
+    //   $sql .= " AND ID_CATEGORIA = '$categoria'";
+    // }
+
+    // if (!empty($ano)) {
+    //   $sql .= " AND Lancamento = '$ano'";
+    // }
+
+    // if (!empty($avaliacao) && $avaliacao !== 'Todas') {
+    //   $sql .= " AND ID_AVALIACAO = '$avaliacao'";
+    // }
+
+    // $result = $conn->query($sql);
+
+    // if ($result->num_rows > 0) {
+    //   echo "<h2>Resultados da Pesquisa:</h2>";
+    //   while ($row = $result->fetch_assoc()) {
+    //     echo "Nome: " . $row["Nome"] . "<br>";
+    //     echo "Categoria: " . $row["ID_CATEGORIA"] . "<br>";
+    //     echo "Ano: " . $row["Lancamento"] . "<br>";
+    //     echo "Avaliação: " . $row["ID_AVALIACAO"] . "<br>";
+    //   }
+    // } else {
+    //   echo "Nenhum resultado encontrado.";
+    // }
+
+    // $conn->close();
 ?>
 </body>
 
