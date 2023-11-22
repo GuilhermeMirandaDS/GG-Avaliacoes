@@ -100,3 +100,17 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+<?php
+require("conecta.php");
+
+$dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 1");
+echo "<form action='pag_avaliacao.php' method='post'>";
+while ($dado = mysqli_fetch_array($dados_select)) {
+    echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><input type='submit' class='resolver-btn' name= enviar[" .$dado[0]. "] value="Avaliações ' . $dado[2] . ' ⭐"></a></div>';
+}
+?>

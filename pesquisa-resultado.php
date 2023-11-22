@@ -12,7 +12,7 @@
 <body>
   <header>
     <nav>
-      <img class="logoicon" src="/elementos/logo.webp">
+      <img class="logoicon" src="elementos/logo.webp">
       <h1 class="logo">GG Avaliações</h1>
       <div id="menu-icon">&#9776;</div>
       <ul>
@@ -23,24 +23,33 @@
     </nav>
     <form class="pesquisa" method="post" action="pesquisa-resultado.php">
       <h2>Filtros:</h2>
-      <select name="categoria" class="filtro">
-        <option disabled selected>Categoria</option>
-        <option class="option">Todas</option>
-        <option class="option">Ação</option>
-        <option class="option">Aventura</option>
-        <option class="option">Comédia</option>
-        <option class="option">Drama</option>
-        <option class="option">Romance</option>
-        <option class="option">Fantasia</option>
-        <option class="option">Suspense</option>
-        <option class="option">Terror</option>
-      </select>
-      <select name="ano" class="filtro">
-        <option disabled selected>Ano</option>
-      </select>
+      <?php
+          require("conecta.php");
+
+          $dados_select = mysqli_query($conn, "SELECT ID_CATEGORIA, Categoria FROM categoria");
+          echo '<select name="categoria" class="filtro"> <option disabled selected>Categoria</option>';
+          while ($dado = mysqli_fetch_array($dados_select)) {
+
+          echo '<option class="option" value='.$dado[0].'>'.$dado[1].'</option>';
+
+          }
+          echo '</select>';
+      ?>
+
+      <?php
+          require("conecta.php");
+
+          $dados_select = mysqli_query($conn, "SELECT Lancamento FROM obras");
+          echo '<select name="categoria" class="filtro"><option disabled selected>Ano</option>';
+          while ($dado = mysqli_fetch_array($dados_select)) {
+
+          echo '<option class="option" value='.$dado[0].'</option>';
+
+          }
+          echo '</select>';
+      ?>
       <select name="avaliacao" class="filtro">
         <option disabled selected>Avaliação</option>
-        <option class="option">Todas</option>
         <option class="option">1</option>
         <option class="option">2</option>
         <option class="option">3</option>
@@ -50,6 +59,7 @@
       <input type="text" name="nome" id="nome-pesquisa" placeholder="Digite o nome">
       <a href="pesquisa-resultado.php"><input type="button" id="pesquisar-btn" value="Pesquisar"></a>
     </form>
+  </header>
   <?php
     require("conecta.php");
 
@@ -58,75 +68,12 @@
     $avaliacao_obra = $_POST['avaliacao_obra'];
     $nome_obra = $_POST['nome_obra'];
 
-    $dados_select = mysqli_query($conn, "SELECT  ");
+    $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.ID_CATEGORIA = '$categoria_obra' or obras.lancamento = '$ano_obra' or avaliacoes.QTD_ESTRELAS = '$avaliacao_obra' or obras.Nome = '$nome_obra' INNER JOIN avaliacoes on avaliacoes.ID_AVALIACAO = obras.ID_AVALIACAO");
+    while ($dado = mysqli_fetch_array($dados_select)) {
+      echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // $nome = $_POST['nome'];
-    // $categoria = $_POST['categoria'];
-    // $ano = $_POST['ano'];
-    // $avaliacao = $_POST['avaliacao'];
-
-    // $sql = "SELECT * FROM obras WHERE 1=1";
-
-    // if (!empty($nome)) {
-    //   $sql .= " AND Nome LIKE '%$nome%'";
-    // }
-
-    // if (!empty($categoria)) {
-    //   $sql .= " AND ID_CATEGORIA = '$categoria'";
-    // }
-
-    // if (!empty($ano)) {
-    //   $sql .= " AND Lancamento = '$ano'";
-    // }
-
-    // if (!empty($avaliacao) && $avaliacao !== 'Todas') {
-    //   $sql .= " AND ID_AVALIACAO = '$avaliacao'";
-    // }
-
-    // $result = $conn->query($sql);
-
-    // if ($result->num_rows > 0) {
-    //   echo "<h2>Resultados da Pesquisa:</h2>";
-    //   while ($row = $result->fetch_assoc()) {
-    //     echo "Nome: " . $row["Nome"] . "<br>";
-    //     echo "Categoria: " . $row["ID_CATEGORIA"] . "<br>";
-    //     echo "Ano: " . $row["Lancamento"] . "<br>";
-    //     echo "Avaliação: " . $row["ID_AVALIACAO"] . "<br>";
-    //   }
-    // } else {
-    //   echo "Nenhum resultado encontrado.";
-    // }
-
-    // $conn->close();
-?>
+  ?>
 </body>
 
 </html>

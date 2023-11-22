@@ -7,7 +7,7 @@ VALUES
 ('Romance'),
 ('Fantasia'),
 ('Suspense'),
-('Terror')
+('Terror');
 
 
 INSERT INTO avaliacoes (QTD_ESTRELAS,Review)
@@ -17,7 +17,7 @@ VALUES
 (3,'Ok'),
 (4,'Bom'),
 (5,'Muito Bom'),
-(4, '"Review do usuário"')
+(4, '"Review do usuário"');
 
 INSERT INTO obras(Nome, Lancamento, Autor, ID_CATEGORIA, Sinopse, ID_AVALIACAO, Foto, Tipo)
 VALUES

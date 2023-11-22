@@ -24,29 +24,38 @@
         </nav>
         <form class="pesquisa" method="post" action="pesquisa-resultado.php">
             <h2>Filtros:</h2>
-            <select class="filtro" name="categoria_obra">
-                <option disabled selected>Categoria</option>
-                <option class="option">Todas</option>
-                <option class="option">Ação</option>
-                <option class="option">Aventura</option>
-                <option class="option">Comédia</option>
-                <option class="option">Drama</option>
-                <option class="option">Romance</option>
-                <option class="option">Fantasia</option>
-                <option class="option">Suspense</option>
-                <option class="option">Terror</option>
-            </select>
-            <select class="filtro" name="ano_obra">
-                <option disabled selected>Ano</option>
-            </select>
+            <?php
+                require("conecta.php");
+
+                $dados_select = mysqli_query($conn, "SELECT ID_CATEGORIA, Categoria FROM categoria");
+                echo '<select name="categoria_obra" class="filtro"> <option disabled selected>Categoria</option>';
+                while ($dado = mysqli_fetch_array($dados_select)) {
+
+                echo '<option name="categoria_obra" class="option" value='.$dado[0].'>'.$dado[1].'</option>';
+
+                }
+                echo '</select>';
+            ?>
+
+            <?php
+                require("conecta.php");
+
+                $dados_select = mysqli_query($conn, "SELECT Lancamento FROM obras");
+                echo '<select name="ano_obra" class="filtro"><option disabled selected>Ano</option>';
+                while ($dado = mysqli_fetch_array($dados_select)) {
+
+            echo '<option name="ano_obra" class="option" value='.$dado[0].'</option>';
+
+                }
+                echo '</select>';
+            ?>
             <select class="filtro" name="avaliacao_obra">
                 <option disabled selected>Avaliação</option>
-                <option class="option">Todas</option>
-                <option class="option">1</option>
-                <option class="option">2</option>
-                <option class="option">3</option>
-                <option class="option">4</option>
-                <option class="option">5</option>
+                <option name="avaliacao_obra" class="option">1</option>
+                <option name="avaliacao_obra" class="option">2</option>
+                <option name="avaliacao_obra" class="option">3</option>
+                <option name="avaliacao_obra" class="option">4</option>
+                <option name="avaliacao_obra" class="option">5</option>
             </select>
             <input type="text" name="nome_obra" id="nome-pesquisa" placeholder="Digite o nome">
             <a href="pesquisa-resultado.php"><input type="button" id="pesquisar-btn" value="Pesquisar"></a>
@@ -97,8 +106,9 @@
         require("conecta.php");
 
         $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 1");
+        echo "<form action='pag_avaliacao.php' method='post'>";
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><input type="submit" class="avaliacao" name= enviar[" .$dado[0]. "] value="Avaliar"></a></div>';
         }
         ?>
 
