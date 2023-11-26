@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #292b2e;
+}
+
+.card {
+    text-align: center;
+    background-color: #222222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+.avaliacao-form table {
+    display: block;
+}
+
+.avaliacao-form td {
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.avaliacao-form select,
+.avaliacao-form textarea {
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    padding: 6px;
+    color: white;
+    box-sizing: border-box;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #141414;
+
+}
+
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+
+    margin-bottom: 10px;
+    color: white;
+}
+
+img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+textarea {
+    font-size: 20px;
+    color: rgb(219, 52, 75);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    border: 2px solid #000000; 
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #141414;
+}
+
+
+.avac{
+    font-family: 'Roboto Slab', serif;
+
+    color: white;
+    font-size: 30px;
+}
+
+.voltar {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+
+input{
+    background-color: rgb(219, 52, 75) ;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    width: 140px;
+    box-shadow: none;
+    border-style: none;
+    border-radius: 10px;
+}

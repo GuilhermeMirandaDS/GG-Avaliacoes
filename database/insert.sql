@@ -10,16 +10,15 @@ VALUES
 ('Terror');
 
 
-INSERT INTO avaliacoes (QTD_ESTRELAS,Review)
+INSERT INTO estrelas (ID_STAR, AVALIACAO)
 VALUES
 (1,'Muito Ruim'),
 (2,'Ruim'),
 (3,'Ok'),
 (4,'Bom'),
-(5,'Muito Bom'),
-(4, '"Review do usuário"');
+(5,'Muito Bom');
 
-INSERT INTO obras(Nome, Lancamento, Autor, ID_CATEGORIA, Sinopse, ID_AVALIACAO, Foto, Tipo)
+INSERT INTO obras(Nome, Lancamento, Autor, ID_CATEGORIA, Sinopse, ID_STAR, Foto, Tipo)
 VALUES
 ('Chainsaw Man', '2022-10-12', 'Tatsuki Fujimoto', 1, 'Denji tem um sonho simples: viver uma vida feliz e pacífica, passando um tempo com uma garota de quem ele goste. Porém, isso está muito longe da realidade, já que Denji é forçado pela yakuza a matar demônios para pagar suas dívidas astronômicas. Usando seu demônio de estimação, Pochita, como arma, ele está pronto para fazer qualquer coisa por um pouco de dinheiro. Infelizmente, ele é assassinado por um demônio contratado pela yakuza. No entanto, em uma virada inesperada nos acontecimentos, Pochita se funde com o cadáver de Denji e concede a ele os poderes de uma serra elétrica. Agora capaz de transformar partes de seu corpo em motosserras, um Denji revivido, usa suas novas habilidades para acabar com os seus inimigos de maneira rápida e brutal.', 5, 'elementos/chainsaw.webp', 1),
 ('Spy × Family', '2022-9-4','Tatsuya Endo', 1, 'Não acostumado a depender de outras pessoas, Twilight arruma uma mulher e uma criança para sua missão de se infiltrar em uma escola particular de elite. Mas o que ele não sabe é que a mulher que ele escolheu é uma assassina e a criança que ele adotou é uma telepata', 5, 'elementos/spy.jpe', 1),
@@ -37,7 +36,7 @@ VALUES
 ('Stranger Things', '2016-15-7',  'Matt Duffer', 8, 'Passada na década de 1980, na cidade fictícia de Hawkings, Stranger Things conta a história de um garoto que desaparece misteriosamente e dos eventos paranormais que se passam em torno desse acontecimento.', 4, 'elementos/things.jpg', 2),
 ('Anne with an E', '2019-19-3', 'Moira Walley-Beckett', 5, 'A história acompanha a vida de Anne Shirley, uma jovem órfã que, após uma infância de abusos entre orfanatos e casas de estranhos, é enviada por engano para viver com um casal de irmãos em idade avançada.', 4, 'elementos/anne.jpg', 2),
 ('Breaking Bad', '2008-20-1', ' Vince Gilligan', 4, 'Um professor do secundário com cancro do pulmão terminal junta-se a um ex-aluno para fabricar e vender metanfetaminas como forma de garantir o futuro da sua família. ', 5, 'elementos/break.jpg', 2),
-('O Gambito da Rainha', '2020-23-10', 'Scott Frank', 4, 'Em um orfanato nos anos 1950, uma garota-prodígio do xadrez luta contra o vício em uma jornada improvável para se tornar a número 1 do mundo.', 4, 'elementos.gambito.webp', 2),
+('O Gambito da Rainha', '2020-23-10', 'Scott Frank', 4, 'Em um orfanato nos anos 1950, uma garota-prodígio do xadrez luta contra o vício em uma jornada improvável para se tornar a número 1 do mundo.', 4, 'elementos/gambito.webp', 2),
 ('Kyoukai No Kanata', '2013-2-10', 'Nagomu Torii', 1, 'Kyoukai no Kanata conta a história de um garoto chamado Akihito Kanbara, que na verdade é meio humano e meio “Youmu”, uma criatura que consegue se curar rapidamente de feridas e machucados. Em um novo ano letivo, Akihito conhece Mirai Kuriyama, uma garota que tenta se suicidar pulando do telhado do colégio.', 5, 'elementos/kyoukai.jpg', 1),
 ('Delete', '2023-28-6', ' Parkpoom Wongpoom', 4, 'Um homem e uma mulher que vivem um caso extraconjugal planejam uma nova vida juntos após descobrirem um telefone com o poder de fazer as pessoas sumirem da face da Terra.', 4, 'elementos/delete.jpg', 2),
 ('Invasão Secreta', '2023-26-7', 'Brian Michael Bendis', 1, 'Após eventos recentes no Universo Marvel, o agente especial Nick Fury está desaparecido, mas poucos sabem seu verdadeiro paradeiro e identidade.', 4, 'elementos/invasao.jpg', 2),

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>GG Avaliações</title>
@@ -17,13 +17,11 @@
             <h1 class="logo">GG Avaliações</h1>
             <div id="menu-icon">&#9776;</div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#title04">Destaques</a></li>
-                <li><a href="#title05">Recomendações</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="avaliacoes.php">Avaliações</a></li>
             </ul>
         </nav>
         <form class="pesquisa" method="post" action="pesquisa-resultado.php">
-            <h2>Filtros:</h2>
             <?php
                 require("conecta.php");
 
@@ -35,38 +33,14 @@
 
                 }
                 echo '</select>';
+
             ?>
-
-            <?php
-                require("conecta.php");
-
-                $dados_select = mysqli_query($conn, "SELECT Lancamento FROM obras");
-                echo '<select name="ano_obra" class="filtro"><option disabled selected>Ano</option>';
-                while ($dado = mysqli_fetch_array($dados_select)) {
-
-            echo '<option name="ano_obra" class="option" value='.$dado[0].'</option>';
-
-                }
-                echo '</select>';
-            ?>
-            <select class="filtro" name="avaliacao_obra">
-                <option disabled selected>Avaliação</option>
-                <option name="avaliacao_obra" class="option">1</option>
-                <option name="avaliacao_obra" class="option">2</option>
-                <option name="avaliacao_obra" class="option">3</option>
-                <option name="avaliacao_obra" class="option">4</option>
-                <option name="avaliacao_obra" class="option">5</option>
-            </select>
             <input type="text" name="nome_obra" id="nome-pesquisa" placeholder="Digite o nome">
-            <a href="pesquisa-resultado.php"><input type="button" id="pesquisar-btn" value="Pesquisar"></a>
+
+            <input type="submit" id="pesquisar-btn" value="Pesquisar">
         </form>
 
     </header>
-    <div id="mobile-menu">
-        <a href="index.html">Página Inicial</a>
-        <li><a href="#title04">Destaques</a></li>
-        <li><a href="#title05">Recomendações</a></li>
-    </div>
 
     <script>
         const menuIcon = document.getElementById("menu-icon");
@@ -76,44 +50,40 @@
             mobileMenu.classList.toggle("active");
         });
     </script>
+
+    <h1 class="bem">Seja bem-vindo!</h1>
     <div class="card-horizontal">
         <div class="card-content">
             <div class="card-title">
-                <h1>Avalie agora! Kyoukai No Kanata!</h1>
-                <h6 class="data">22/04/2024</h6>
-                <p>Kyoukai no Kanata conta a história de um garoto chamado Akihito Kanbara, que na verdade é meio humano e meio “Youmu”, uma criatura que consegue se curar rapidamente de feridas e machucados. Em um novo ano letivo, Akihito conhece Mirai Kuriyama, uma garota que tenta se suicidar pulando do telhado do colégio.</p>
-                <a href="kyoukai.html" class="avaliacaokyoukai"> Avalie agora! ( 5⭐)</a>
+                <h1>One Piece</h1>
+                <h4 class="">Avalie agora!</h4>
+                <p>One Piece é uma série de mangá escrita e ilustrada por Eiichiro Oda e que conta as aventuras de Monkey D. s capítulos têm sido serializados na revista Weekly Shōnen Jump desde julho de 1997, com os capítulos compilados e publicados em 106 volumes tankōbon pela editora Shueisha até junho de 2023. </p>
+                <a href="avaliacoes.php" class="avaliacaokyoukai"> Avalie agora! </a>
             </div>
         </div>
-        <div class="card-image">
-            <img src="elementos/kyoukai.png" alt="kyoukai">
+        <div class="card-top">
+            <img src="elementos/piece.gif" alt="img">
         </div>
     </div>
 
-
-
-
-
-
-    <h1 class="title-1 animes-title">Animes</h1>
-    <p class="animes-sub">Avalie os animes da atualidade e os clássicos!</p>
+    <h1 id="title03 " class="title-1 title-populares">Animes</h1>
+    <p class="populares-sub">Avalie os animes em alta!</p>
     <div class="arrow-container">
-        <i class="fas fa-arrow-left arrow anime-prev-arrow" id="prev-arrow"></i>
-        <i class="fas fa-arrow-right arrow anime-next-arrow" id="next-arrow"></i>
+        <i class="fas fa-arrow-left arrow populares-prev-arrow" id="prev-arrow-populares"></i>
+        <i class="fas fa-arrow-right arrow populares-next-arrow" id="next-arrow-populares"></i>
     </div>
-    <div class="card-container" id="card-container-animes">
+
+    <div class="card-container" id="card-container-populares">
+
         <?php
         require("conecta.php");
 
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 1");
-        echo "<form action='pag_avaliacao.php' method='post'>";
+        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras WHERE obras.tipo = 1");
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><input type="submit" class="avaliacao" name= enviar[" .$dado[0]. "] value="Avaliar"></a></div>';
+            echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
         }
         ?>
-
     </div>
-
     <h1 class="title-1 series-title">Séries</h1>
     <p class="series-sub">Avalie as séries da atualidade e as clássicas!</p>
     <div class="arrow-container">
@@ -125,34 +95,17 @@
         <?php
         require("conecta.php");
 
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras WHERE obras.tipo = 2");
+        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras WHERE obras.tipo = 2");
         while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+            echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
         }
         ?>
     </div>
 
 
-    <h1 id="title03 " class="title-1 title-populares">Populares</h1>
-    <p class="populares-sub">Explore o que está em alta</p>
-    <div class="arrow-container">
-        <i class="fas fa-arrow-left arrow populares-prev-arrow" id="prev-arrow-populares"></i>
-        <i class="fas fa-arrow-right arrow populares-next-arrow" id="next-arrow-populares"></i>
-    </div>
-
-    <div class="card-container" id="card-container-populares">
-
-        <?php
-        require("conecta.php");
-
-        $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
-        while ($dado = mysqli_fetch_array($dados_select)) {
-            echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
-        }
-        ?>
     </div>
         <h1 id="title04" class="title-1 title-destaques">Destaques da Semana</h1>
-        <p class="sub"></p>
+        <p class="populares-sub">Avalie os destaques da semana!</p>
         <div class="arrow-container">
             <i class="fas fa-arrow-left arrow destaques-prev-arrow" id="prev-arrow-destaques"></i>
             <i class="fas fa-arrow-right arrow destaques-next-arrow" id="next-arrow-destaques"></i>
@@ -162,16 +115,16 @@
             <?php
             require("conecta.php");
 
-            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
+            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras");
             while ($dado = mysqli_fetch_array($dados_select)) {
-                echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+                echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
             }
             ?>
     </div>
 
 
         <h1 id="title05 " class="title-1 title-recomendacoes">Recomendações</h1>
-        <p class="sub"></p>
+        <p class="populares-sub">Venha ver as avaliações de recomendações!</p>
         <div class="arrow-container">
             <i class="fas fa-arrow-left arrow recomendacoes-prev-arrow" id="prev-arrow-recomendacoes"></i>
             <i class="fas fa-arrow-right arrow recomendacoes-next-arrow" id="next-arrow-recomendacoes"></i>
@@ -181,9 +134,9 @@
             <?php
             require("conecta.php");
 
-            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, ID_AVALIACAO, Foto FROM obras");
+            $dados_select = mysqli_query($conn, "SELECT ID_OBRA, Nome, Foto FROM obras");
             while ($dado = mysqli_fetch_array($dados_select)) {
-                echo '<div class="card"><img src="' . $dado[3] . '"><div class="card-title">' . $dado[1] . '</div><a href="attack.html" class="avaliacao">Avaliações ' . $dado[2] . ' ⭐</a></div>';
+                echo '<div class="card"><a href="pag_avaliacao.php?id=' . $dado['ID_OBRA'] . '"><img src="' . $dado['Foto'] . '"><div class="card-title">' . $dado['Nome'] . '</div></a></div>';
             }
             ?>
     </div>
